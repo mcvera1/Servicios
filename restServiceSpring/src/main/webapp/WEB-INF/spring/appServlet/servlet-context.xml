@@ -23,6 +23,9 @@
 	
 	<context:component-scan base-package="co.com.service" />
 	
-	
+	<!-- se agrega tanto la interfaz como la implemantacion para el autowired  -->
+	 <context:component-scan base-package="co.com.interfaces" />
+	 <context:component-scan base-package="co.com.imp" />
+
 	
 </beans:beans>
