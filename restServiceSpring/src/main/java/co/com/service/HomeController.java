@@ -29,7 +29,6 @@ public class HomeController {
     //@ResponseBodyno pide para ridireccionar a la pagina http://localhost:8080/service/user
     @RequestMapping(value = "/user", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody List<User> getAllUsers() {
-    	System.err.println("entre");
         return userService.findAll();
     }
  
@@ -45,7 +44,7 @@ public class HomeController {
         return response;
     }
  
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/userPost", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public @ResponseBody void insertUser(@RequestBody User user) {
         userService.save(user);
